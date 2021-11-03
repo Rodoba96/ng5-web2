@@ -11,7 +11,7 @@ import { AboutComponent } from './about/about.component';
 import {HttpClientModule} from '@angular/common/http';
 import {APOLLO_OPTIONS} from 'apollo-angular';
 import {HttpLink} from 'apollo-angular/http';
-import {InMemoryCache} from '@apollo/client/core';
+import { GraphQLModule } from './graphql.module';
 
 
 @NgModule({
@@ -26,19 +26,9 @@ import {InMemoryCache} from '@apollo/client/core';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    GraphQLModule,
   ],
-  providers: [{
-    provide: APOLLO_OPTIONS,
-    useFactory: (httpLink: HttpLink) => {
-      return {
-        cache: new InMemoryCache(),
-        link: httpLink.create({
-          uri: "http://34.125.161.83:8081/graphql/"
-        })
-      }
-    },
-    deps: [HttpLink]
-  }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -19,7 +19,8 @@ export class HomeComponent implements OnInit {
   pass: string = ""
   token: string = ""
 
-  goals = [];
+  goals : Array<any> = [];
+
 
   loading!: boolean;
   private querySubscription!: Subscription;
@@ -43,6 +44,7 @@ export class HomeComponent implements OnInit {
     this.querySubscription = this.graphqlProductsService.links("-")
       .valueChanges
       .subscribe(({ data, loading }) => {
+
         this.loading = loading;
         this.goals = JSON.parse(JSON.stringify(data)).links;
         console.log(JSON.stringify(this.goals))
@@ -74,7 +76,8 @@ export class HomeComponent implements OnInit {
 //    this.goals.push(this.goalText);
 
 
-    var mytoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkc29mdCIsImV4cCI6MTYzNDc5NTgwMiwib3JpZ0lhdCI6MTYzNDc5NTUwMn0._6tOsFeS7Li59toIpxyD1rDNi_HXnjvcDPBjoKXNcUk";
+    var mytoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJvbGFuZG8iLCJleHAiOjE2MzU5NzE5NzAsIm9yaWdJYXQiOjE2MzU5NzE2NzB9.Rpceqvq_0YgkIXeM1tJCqdLJcNMER8vbgFZN_DsCQZw";
+    
     //this.storageService.getSession("token");
     alert(this.goalText);
 
