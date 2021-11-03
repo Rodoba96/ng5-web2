@@ -8,10 +8,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 
-import { HttpClientModule } from "@angular/common/http";
-import { APOLLO_OPTIONS } from "apollo-angular";
-import { HttpLinkModule, HttpLink } from "apollo-angular-link-http";
-import { InMemoryCache } from "apollo-cache-inmemory";
+import {HttpClientModule} from '@angular/common/http';
+import {APOLLO_OPTIONS} from 'apollo-angular';
+import {HttpLink} from 'apollo-angular/http';
+import {InMemoryCache} from '@apollo/client/core';
 
 
 @NgModule({
@@ -26,7 +26,6 @@ import { InMemoryCache } from "apollo-cache-inmemory";
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    HttpLinkModule
   ],
   providers: [{
     provide: APOLLO_OPTIONS,
